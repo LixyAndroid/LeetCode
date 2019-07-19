@@ -130,8 +130,8 @@ public class Solution {
 
                 if (target == nums[i]+nums[j]){
 
-                    index[0] = i;
-                    index[1] = j;
+                    index[0] = j;
+                    index[1] = i;
                 }
                 j++;
             }
