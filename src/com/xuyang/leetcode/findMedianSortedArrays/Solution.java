@@ -85,53 +85,102 @@ public class Solution {
     所以时间复杂度是O(log(min(m,n)))。
 
      */
-    private static double findMedianSortedArrays(int[] A, int[] B) {
+//    private static double findMedianSortedArrays(int[] A, int[] B) {
+//        int m = A.length;
+//        int n = B.length;
+//
+//        if (m > n) { // to ensure m<=n
+//            int[] temp = A;
+//            A = B;
+//            B = temp;
+//            int tmp = m;
+//            m = n;
+//            n = tmp;
+//        }
+//        int iMin = 0, iMax = m, halfLen = (m + n + 1) / 2;
+//        while (iMin <= iMax) {
+//            int i = (iMin + iMax) / 2;
+//            int j = halfLen - i;
+//            if (i < iMax && B[j - 1] > A[i]) {
+//                iMin = i + 1; // i is too small
+//            } else if (i > iMin && A[i - 1] > B[j]) {
+//                iMax = i - 1; // i is too big
+//            } else { // i is perfect
+//                int maxLeft = 0;
+//                if (i == 0) {
+//                    maxLeft = B[j - 1];
+//                } else if (j == 0) {
+//                    maxLeft = A[i - 1];
+//                } else {
+//                    maxLeft = Math.max(A[i - 1], B[j - 1]);
+//                }
+//                if ((m + n) % 2 == 1) {
+//                    return maxLeft;
+//                }
+//
+//                int minRight = 0;
+//                if (i == m) {
+//                    minRight = B[j];
+//                } else if (j == n) {
+//                    minRight = A[i];
+//                } else {
+//                    minRight = Math.min(B[j], A[i]);
+//                }
+//
+//                return (maxLeft + minRight) / 2.0;
+//            }
+//        }
+//        return 0.0;
+//    }
+
+
+    /*
+
+    针对第一种思路，其实，我们不需要将两个数组真的合并，我们只需要找到中位数在哪里就可以了。
+
+    开始的思路是写一个循环，然后里边判断是否到了中位数的位置，到了就返回结果，但这里对偶数和奇数的分类会很麻烦。
+    当其中一个数组遍历完后，出了 for 循环对边界的判断也会分几种情况。总体来说，虽然复杂度不影响，但代码会看起来很乱。
+
+    首先是怎么将奇数和偶数的情况合并一下。
+
+    用 len 表示合并后数组的长度，如果是奇数，我们需要知道第 （len+1）/2 个数就可以了，如果遍历的话需要遍历 int(len/2 ) + 1 次。
+    如果是偶数，我们需要知道第 len/2和 len/2+1 个数，也是需要遍历 len/2+1 次。所以遍历的话，奇数和偶数都是 len/2+1 次。
+
+    返回中位数的话，奇数需要最后一次遍历的结果就可以了，偶数需要最后一次和上一次遍历的结果。
+    所以我们用两个变量 left 和 right，right 保存当前循环的结果，在每次循环前将 right 的值赋给 left。这样在最后一次循环的时候，left 将得到 right 的值，也就是上一次循环的结果，接下来 right 更新为最后一次的结果。
+
+    循环中该怎么写，什么时候 A 数组后移，什么时候 B 数组后移。
+    用 aStart 和 bStart 分别表示当前指向 A 数组和 B 数组的位置。如果 aStart 还没有到最后并且此时 A 位置的数字小于 B 位置的数组，那么就可以后移了。也就是aStart＜m&&A[aStart]< B[bStart]。
+
+    但如果 B 数组此刻已经没有数字了，继续取数字 B[ bStart ]，则会越界，所以判断下 bStart 是否大于数组长度了，这样 || 后边的就不会执行了，也就不会导致错误了，所以增加为 aStart＜m&&(bStart)>= n||A[aStart]<B[bStart])。
+
+     */
+
+    public static   double findMedianSortedArrays(int[] A, int[] B) {
+        //m ,n是 A，B数组的长度
         int m = A.length;
         int n = B.length;
 
-        if (m > n) { // to ensure m<=n
-            int[] temp = A;
-            A = B;
-            B = temp;
-            int tmp = m;
-            m = n;
-            n = tmp;
-        }
-        int iMin = 0, iMax = m, halfLen = (m + n + 1) / 2;
-        while (iMin <= iMax) {
-            int i = (iMin + iMax) / 2;
-            int j = halfLen - i;
-            if (i < iMax && B[j - 1] > A[i]) {
-                iMin = i + 1; // i is too small
-            } else if (i > iMin && A[i - 1] > B[j]) {
-                iMax = i - 1; // i is too big
-            } else { // i is perfect
-                int maxLeft = 0;
-                if (i == 0) {
-                    maxLeft = B[j - 1];
-                } else if (j == 0) {
-                    maxLeft = A[i - 1];
-                } else {
-                    maxLeft = Math.max(A[i - 1], B[j - 1]);
-                }
-                if ((m + n) % 2 == 1) {
-                    return maxLeft;
-                }
+        int len = m + n;
+        int left = -1, right = -1;
 
-                int minRight = 0;
-                if (i == m) {
-                    minRight = B[j];
-                } else if (j == n) {
-                    minRight = A[i];
-                } else {
-                    minRight = Math.min(B[j], A[i]);
-                }
+        int aStart = 0, bStart = 0;
+        for (int i = 0; i <= len / 2; i++) {
+            left = right;
 
-                return (maxLeft + minRight) / 2.0;
+            //这个判断是关键
+            if (aStart < m && (bStart >= n || A[aStart] < B[bStart])) {
+                right = A[aStart++];
+            } else {
+                right = B[bStart++];
             }
         }
-        return 0.0;
+        if ((len & 1) == 0)
+            return (left + right) / 2.0;
+        else
+            return right;
     }
+
 
 
     public static void main(String[] args) {
