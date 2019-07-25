@@ -1,11 +1,5 @@
 package com.xuyang.leetcode.longestCommonPrefix;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.length;
-
 /**
  * @author Li Xuyang
  * date  2019/7/24 13:54
