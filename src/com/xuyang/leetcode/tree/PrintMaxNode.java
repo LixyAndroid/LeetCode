@@ -90,10 +90,12 @@ public class PrintMaxNode {
                 queue.offer(p1.left);
                 y++;
             }
+
             if(p1.right!=null){ //同上
                 queue.offer(p1.right);
                 y++;
             }
+
             if(k==0){           //如果k=0,也就是说当前层的节点都没有了
                 k=y;            //令k等于下一层的节点数
                 y=0;            //下一层节点数初始化为0
