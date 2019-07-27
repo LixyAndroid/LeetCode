@@ -41,7 +41,7 @@ public class InsertionSort {
 
     public static void main(String[] args) {
 
-        int[] values = {4, 89, 3, 8, 81, 1, 45, 28, 34, 56, 7, 6, 17, 9, 41, 65, 21};
+        int[] values = {4, 89, 3, 8, 81, 1, 45, 28, 56, 7, 6, 17, 9, 41, 65, 21};
         System.out.print("排序前: ");
 
         for (int i = 0; i < values.length; i++) {
