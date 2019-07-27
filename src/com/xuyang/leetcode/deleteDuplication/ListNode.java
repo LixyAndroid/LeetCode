@@ -3,6 +3,7 @@ package com.xuyang.leetcode.deleteDuplication;
 /**
  * @author Li Xuyang
  * date  2019/7/27 11:49
+ * 定义链表
  */
 public class ListNode {
 

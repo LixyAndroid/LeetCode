@@ -3,7 +3,9 @@ package com.xuyang.leetcode.deleteDuplication;
 /**
  * @author Li Xuyang
  * date  2019/7/27 10:37
+ *
  * 删除链表中重复的节点，不保留 若一个点重复，则全部删除 题目要求
+ *
  */
 public class Solution {
 
