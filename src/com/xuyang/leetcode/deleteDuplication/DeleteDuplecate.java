@@ -58,37 +58,61 @@ public class DeleteDuplecate {
         return root;
     }
 
-    public static void main(String[] args) {
-        //-构造单链表start----
-        int[] num = { 2, 3, 3, 5, 7, 8, 8, 8, 9, 9, 10 };
-        ListNode head = new ListNode(num[0]);
-        ListNode pre = head;
-        for (int i = 1; i < num.length; i++) {
-            ListNode node = new ListNode(num[i]);
-            pre.next = node;
-            pre = node;
+    /**
+     * 新增节点
+     * @param data
+     */
+    public ListNode insertNode(int data, ListNode head) {
+        ListNode node = new ListNode(data);
+        if (head == null) {
+            head = node;
+            return head;
         }
-        //-构造单链表end-----
-
-
-
-        //输出
-        System.out.print("删除前：");
-        for (pre = head.next; pre !=null ; pre = pre.next) {
-
-            System.out.print(pre.val + " ");
+        ListNode curNode = head;
+        //循环找到当前链表的尾节点
+        while (curNode.next != null) {
+            curNode = curNode.next;
         }
+        //尾节点的指针指向新增加的节点
+        curNode.next = node;
+        return head;
+    }
 
-        deleteDulp(head);
+    /**
+     * 打印链表
+     */
+    public void printList(ListNode head) {
+        ListNode curNode = head;
+        //循环遍历到尾节点
+        while (curNode != null) {
+            System.out.print(curNode.val + "  ");
+            curNode = curNode.next;
+        }
         System.out.println();
-        System.out.print("删除后：");
+    }
 
-        for (pre = head.next; pre !=null ; pre = pre.next) {
+    public static void main(String[] args) {
+        DeleteDuplecate deleteDuplecate = new DeleteDuplecate();
 
-            System.out.print(pre.val + " ");
-        }
+        //链表的头指针
+        ListNode head = null;
 
+        //新增节点,第一次新增时需要返回头指针，用于定位链表
+        head = deleteDuplecate.insertNode(2, head);
+        deleteDuplecate.insertNode(1, head);
+        deleteDuplecate.insertNode(5, head);
+        deleteDuplecate.insertNode(3, head);
+        deleteDuplecate.insertNode(4, head);
+        deleteDuplecate.insertNode(3, head);
+        deleteDuplecate.insertNode(1, head);
 
+        System.out.println("原链表：");
+        deleteDuplecate.printList(head);
 
+        //排序链表
+        head = deleteDulp(head);
+
+        System.out.println("去重后：");
+        deleteDuplecate.printList(head);
     }
 }
