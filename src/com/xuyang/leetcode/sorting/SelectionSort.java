@@ -3,7 +3,6 @@ package com.xuyang.leetcode.sorting;
 /**
  * @author Li Xuyang
  * date  2019/7/25 20:13
- * <p>
  * 复习排序算法
  * 选择排序
  * 选择排序可描述为一种原地比较的算法

@@ -16,15 +16,15 @@ public class BubbleSort {
 
             swapped = false;
 
-            for (int j = values.length-1; j >i ; j--) {
+            for (int j = values.length - 1; j > i; j--) {
 
                 //如果后者小于前者，这需要执行交换
-                if (values[j] < values[j-1]){
+                if (values[j] < values[j - 1]) {
 
                     //交换j，和j-1处的值
                     int temp = values[j];
-                    values[j] =values[j -1];
-                    values[j-1] =temp;
+                    values[j] = values[j - 1];
+                    values[j - 1] = temp;
 
                     //交换完，设置swapped = true;
 
@@ -33,7 +33,7 @@ public class BubbleSort {
 
             }
             //swapped 为false的话，就说明。没进入交换，就说明排序完成，直接break;
-            if (!swapped){
+            if (!swapped) {
                 break;
             }
 
@@ -41,7 +41,6 @@ public class BubbleSort {
 
 
     }
-
 
 
     public static void main(String[] args) {
