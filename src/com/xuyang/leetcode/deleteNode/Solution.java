@@ -3,7 +3,6 @@ package com.xuyang.leetcode.deleteNode;
 /**
  * @author Li Xuyang
  * date  2019/7/29 10:38
- * <p>
  * 删除指定的节点
  * 方法：与下一个节点交换
  * 从链表里删除一个节点 node 的最常见方法是修改之前节点的 next 指针，使其指向之后的节点。
