@@ -7,10 +7,9 @@ import java.util.Arrays;
  * date  2019/8/2 20:26
  * 最接近的三数之和
  * 给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。
- *
+ * <p>
  * 看到本题，首先要想到排序
  * 本解法用排序和双指针
- *
  */
 public class Solution {
 
@@ -41,23 +40,23 @@ public class Solution {
         Arrays.sort(nums);
         //初始定义最接近的值，为前3个数的和
         int ans = nums[0] + nums[1] + nums[2];
-        for(int i=0;i<nums.length;i++) {
-            int start = i+1, end = nums.length - 1;
+        for (int i = 0; i < nums.length; i++) {
+            int start = i + 1, end = nums.length - 1;
             // start < end，保证遍历一遍
-            while(start < end) {
+            while (start < end) {
                 //定义和
                 int sum = nums[start] + nums[end] + nums[i];
                 //用绝对值进行比较，条件成立为找到了更接近的值，将sum赋值给ans
-                if(Math.abs(target - sum) < Math.abs(target - ans)){
+                if (Math.abs(target - sum) < Math.abs(target - ans)) {
                     ans = sum;
                 }
 
 
-                if(sum > target){ //关键就在于这里，因为已经排序了，若3数之和大于target 则前移即现在值大了，需要减小
+                if (sum > target) { //关键就在于这里，因为已经排序了，若3数之和大于target 则前移即现在值大了，需要减小
                     end--;
-                } else if(sum < target){   //关键就在于这里，因为已经排序了，若3数之和小于target 则前移即现在值小了，需要增大
+                } else if (sum < target) {   //关键就在于这里，因为已经排序了，若3数之和小于target 则前移即现在值小了，需要增大
                     start++;
-                } else{
+                } else {
                     return ans; //返回
                 }
 
@@ -67,10 +66,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] nums = {-1,2,-4,1};
-        System.out.println(threeSumClosest(nums,1));
+        int[] nums = {-1, 2, -4, 1};
+        System.out.println(threeSumClosest(nums, 1));
     }
-
 
 
 }
