@@ -14,8 +14,9 @@ package com.xuyang.leetcode.sorting;
 public class QuickSort {
 
     public static void quick(int[] values, int low, int high) {
-        if (low < high) {
 
+        //判断检查低序号是否小于高序号， 若为false,则表示完成了集合的排序，分割到了不可分割位置,
+        if (low < high) {
             //下一次子集分区时的分隔点序号index
             int index = partition(values, low, high);
             quick(values, low, index - 1);
@@ -24,15 +25,21 @@ public class QuickSort {
 
     }
 
+
+
     private static int partition(int[] values, int low, int high) {
 
+        //选最后一个对象为基准
         int pivot = values[high];
         int i = (low - 1);
 
+        //遍历
         for (int j = low; j < high - 1; j++) {
 
             //如果j处的值，小于等于最高位处的值 就执行交换，把i处的值和j处交换
             if (values[j] <= pivot) {
+
+                //i先加+
                 i++;
 
                 //i和j处的值交换，
@@ -43,7 +50,6 @@ public class QuickSort {
             }
 
         }
-
 
         i++;
         int temp = values[i];
