@@ -27,7 +27,7 @@ public class PushPop05 {
 
         int out = stack2.pop();
 
-        //再存回栈1，恢复原来的状态,这部很关键
+        //再存回栈1，恢复原来的状态,这步很关键
         while(!stack2.isEmpty())
         {
             stack1.push(stack2.pop());
@@ -48,7 +48,6 @@ public class PushPop05 {
         pushPop05.push(5);
 
         for (int i = 0; i < 5; i++) {
-
             System.out.println(pushPop05.pop());
         }
 
