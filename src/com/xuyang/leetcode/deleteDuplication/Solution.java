@@ -10,11 +10,11 @@ package com.xuyang.leetcode.deleteDuplication;
 public class Solution {
 
 
-    public static ListNode deleteDuplication(ListNode pHead)
+    public static void deleteDuplication(ListNode pHead)
     {
 
         if (pHead == null){
-            return null;}
+            return;}
 
         //注意备用头结点，头结点可能被删除
         ListNode first = new ListNode(-1);
@@ -38,7 +38,6 @@ public class Solution {
                 p = p.next;
             }
         }
-        return first.next;
     }
 
 
