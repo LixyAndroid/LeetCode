@@ -18,7 +18,7 @@ public class Solution {
     /*
     复杂度分析
 
-    时间复杂度：O(n)，对于含有 nn 个元素的链表，我们访问每个元素最多一次。添加一个结点到哈希表中只需要花费 O(1) 的时间。
+    时间复杂度：O(n)，对于含有 n 个元素的链表，我们访问每个元素最多一次。添加一个结点到哈希表中只需要花费 O(1) 的时间。
 
     空间复杂度：O(n)，空间取决于添加到哈希表中的元素数目，最多可以添加 nn 个元素。
      */
@@ -31,22 +31,24 @@ public class Solution {
      * @param head
      * @return bool
      */
-//    public static boolean hasCycle(ListNode head) {
-//        //创建HashSet<>
-//        Set<ListNode> nodesSeen = new HashSet<>();
-//        while (head != null) {
-//            //环形则会包括
-//            if (nodesSeen.contains(head)) {
-//                return true;
-//            } else {
-//                //不包括则继续添加
-//                nodesSeen.add(head);
-//            }
-//            head = head.next;
-//        }
-//        return false;
-//
-//    }
+    public static boolean hasCycle1(ListNode head) {
+        //创建HashSet<>
+        Set<ListNode> nodesSeen = new HashSet<>();
+        while (head != null) {
+            //环形则会包括
+            if (nodesSeen.contains(head)) {
+                return true;
+            } else {
+                //不包括则继续添加
+                nodesSeen.add(head);
+            }
+            head = head.next;
+        }
+        return false;
+
+    }
+    //node.contains(head)
+    //head = head.next
 
 
     //双指针
@@ -56,7 +58,7 @@ public class Solution {
 
     /*
     算法：
-        通过使用具有 不同速度 的快、慢两个指针遍历链表，空间复杂度可以被降低至 O(1)O(1)。慢指针每次移动一步，而快指针每次移动两步。
+        通过使用具有 不同速度 的快、慢两个指针遍历链表，空间复杂度可以被降低至 O(1)。慢指针每次移动一步，而快指针每次移动两步。
         如果列表中不存在环，最终快指针将会最先到达尾部，此时我们可以返回 false。
         现在考虑一个环形链表，把慢指针和快指针想象成两个在环形赛道上跑步的运动员（分别称之为慢跑者与快跑者）。
         而快跑者最终一定会追上慢跑者。这是为什么呢？考虑下面这种情况（记作情况 A）- 假如快跑者只落后慢跑者一步，在下一次迭代中，它们就会分别跑了一步或两步并相遇。
