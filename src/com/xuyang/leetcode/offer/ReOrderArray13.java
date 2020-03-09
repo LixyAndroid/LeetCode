@@ -124,9 +124,9 @@ public class ReOrderArray13 {
       int i=0;
       while (i<array.length){
         int j = i+1;
-        if (array[i]%2 == 0){ // a[i]为偶数，j前进，直到替换
+        if (isOddNumber(array[i])){ // a[i]为偶数，j前进，直到替换
 
-            while (array[j]%2 ==0){ // j为偶数，前进
+            while (isOddNumber(array[j])){ // j为偶数，前进
 
                 if (j == array.length-1){ // i为偶数，j也为偶数，一直后移到了末尾，证明后面都是偶数
                     return;
@@ -154,7 +154,16 @@ public class ReOrderArray13 {
     }
 
 
-    //个人感觉方法2好，代码简练，也易懂
+    //判读是不是偶数
+    public static boolean isOddNumber(int val) {
+        if (val % 2 == 0) {
+            return true;
+        }
+        return false;
+    }
+
+
+        //个人感觉方法2好，代码简练，也易懂
     public static void main(String[] args) {
 
         int[] arr = {1, 2, 10, 3, 4, 4, -6, 2, 4, 5, 8};
