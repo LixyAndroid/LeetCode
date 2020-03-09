@@ -3,6 +3,7 @@ package com.xuyang.leetcode.merge;
 /**
  * @author Li Xuyang
  * @date 2020/3/8 13:08
+ * 应该想到归并排序
  */
 public class Solution {
 
