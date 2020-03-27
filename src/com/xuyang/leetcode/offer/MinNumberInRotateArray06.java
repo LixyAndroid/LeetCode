@@ -14,7 +14,7 @@ package com.xuyang.leetcode.offer;
  * 找到最小数字通常只需遍历一遍数组就可以，时间复杂度是O(n)。
  * 这里肯定不能这样做，因为没有利用到旋转数组的特性，根据观察，最小值其实是数组前后两部分的分界，而这两部分都是有序的，可以利用二分查找的思想进行处理。
  */
-public class minNumberInRotateArray06 {
+public class MinNumberInRotateArray06 {
     public static int minNumberInRotateArray(int[] array) {
 
         if (array.length == 0) {
