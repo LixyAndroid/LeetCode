@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/3/22 23:07
  * 整数中1出现的次数（从1到n整数中1出现的次数）
  */
-public class NumberOf1Between1AndN_Solution30 {
+public class NumberOf1Between1AndN31 {
 
     /*
     求出1~13的整数中1出现的次数,并算出100~1300的整数中1出现的次数？
