@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/3/22 15:47
  * 数组中出现次数超过一半的数字
  */
-public class MoreThanHalfNum_Solution27 {
+public class MoreThanHalfNum_Solution28 {
     /*
     题目描述
     数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
