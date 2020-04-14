@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/4/11 15:29
  * 对称的二叉树
  */
-public class IsSymmetrical57 {
+public class IsSymmetrical58 {
     //请实现一个函数，用来判断一颗二叉树是不是对称的。注意，如果一个二叉树同此二叉树的镜像是同样的，定义其为对称的。
 
     /*
