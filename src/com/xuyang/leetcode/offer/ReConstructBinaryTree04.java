@@ -13,31 +13,41 @@ import java.util.Arrays;
  */
 public class ReConstructBinaryTree04 {
 
-//    public static TreeNode reConstructBinaryTree(int[] pre, int[] in) {
-//        TreeNode root = reConstructBinaryTree(pre, 0, pre.length - 1, in, 0, in.length - 1);
-//        return root;
-//    }
+
+    /*
+
+    Arrays.copyOfRange(T[ ] original,int from,int to)
+    将一个原始的数组original，从下标from开始复制，复制到上标to，生成一个新的数组。
+    注意这里包括下标from，不包括上标to。
+    这个方法在一些处理数组的编程题里很好用，效率和clone基本一致，都是native method，比利用循环复制数组效率要高得多。
+    相当于截取数组，生成一个新数组
+     */
+
+    public static TreeNode reConstructBinaryTree(int[] pre, int[] in) {
+        TreeNode root = reConstructBinaryTree(pre, 0, pre.length - 1, in, 0, in.length - 1);
+        return root;
+    }
 
 
     // 前序遍历{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}
-//    private static TreeNode reConstructBinaryTree(int[] pre, int startPre, int endPre, int[] in, int startIn, int endIn) {
-//
-//        if (startPre > endPre || startIn > endIn)
-//            return null;
-//        TreeNode root = new TreeNode(pre[startPre]);
-//
-//        for (int i = startIn; i <= endIn; i++)
-//            if (in[i] == pre[startPre]) {
-//                root.left = reConstructBinaryTree(pre, startPre + 1, startPre + i - startIn, in, startIn, i - 1);
-//                root.right = reConstructBinaryTree(pre, i - startIn + startPre + 1, endPre, in, i + 1, endIn);
-//                break;
-//            }
-//
-//        return root;
-//    }
+    private static TreeNode reConstructBinaryTree(int[] pre, int startPre, int endPre, int[] in, int startIn, int endIn) {
+
+        if (startPre > endPre || startIn > endIn)
+            return null;
+        TreeNode root = new TreeNode(pre[startPre]);
+
+        for (int i = startIn; i <= endIn; i++)
+            if (in[i] == pre[startPre]) {
+                root.left = reConstructBinaryTree(pre, startPre + 1, startPre + i - startIn, in, startIn, i - 1);
+                root.right = reConstructBinaryTree(pre, i - startIn + startPre + 1, endPre, in, i + 1, endIn);
+                break;
+            }
+
+        return root;
+    }
 
 
-    public static TreeNode reConstructBinaryTree(int[] pre, int[] in) {
+    public static TreeNode reConstructBinaryTree2(int[] pre, int[] in) {
         if (pre.length == 0 || in.length == 0) {
             return null;
         }
