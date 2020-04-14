@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/4/4 13:43
  * 把字符串转换成整数
  */
-public class StrToInt48 {
+public class StrToInt49 {
 
 
     /*
@@ -78,7 +78,7 @@ public class StrToInt48 {
     }
 
     public static void main(String[] args) {
-        StrToInt48 strToInt48 = new StrToInt48();
+        StrToInt49 strToInt48 = new StrToInt49();
 
         String str = "-131231231";
 
