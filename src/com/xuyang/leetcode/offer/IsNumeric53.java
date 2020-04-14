@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * @date 2020/4/7 17:04
  * 表示数值的字符串
  */
-public class IsNumeric52 {
+public class IsNumeric53 {
 
 
     //请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。
