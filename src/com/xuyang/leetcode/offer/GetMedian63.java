@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
  * @date 2020/4/12 15:11
  * 数据流中的中位数
  */
-public class GetMedian62 {
+public class GetMedian63 {
 
     /*
     如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，
