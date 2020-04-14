@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/4/14 09:15
  * 剪绳子
  */
-public class CutRope66 {
+public class CutRope67 {
 
     /*
     给你一根长度为n的绳子，请把绳子剪成整数长的m段（m、n都是整数，n>1并且m>1），
@@ -51,7 +51,7 @@ public class CutRope66 {
     }
 
     public static void main(String[] args) {
-        CutRope66 cutRope66 = new CutRope66();
+        CutRope67 cutRope66 = new CutRope67();
         int res = cutRope66.cutRope(8);
         System.out.println(res);
     }
