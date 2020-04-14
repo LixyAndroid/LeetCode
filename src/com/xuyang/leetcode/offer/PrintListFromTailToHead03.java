@@ -5,9 +5,12 @@ import java.util.ArrayList;
 /**
  * @author Li Xuyang
  * date  2019/8/7 17:32
- * 输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。
+ * 从尾到头打印链表
  */
-public class printListFromTailToHead03 {
+public class PrintListFromTailToHead03 {
+
+    //  输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。
+
 
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
 
@@ -64,7 +67,7 @@ public class printListFromTailToHead03 {
     }
 
     public static void main(String[] args) {
-        printListFromTailToHead03 printListFromTailToHead03 = new printListFromTailToHead03();
+        PrintListFromTailToHead03 printListFromTailToHead03 = new PrintListFromTailToHead03();
 
         //链表的头指针
         ListNode head = null;
