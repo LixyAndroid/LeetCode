@@ -8,7 +8,7 @@ import java.util.LinkedList;
  * @date 2020/4/11 15:44
  * 按之字形顺序打印二叉树
  */
-public class Print58 {
+public class Print59 {
 
     /*
     主要的方法与BFS写法没什么区别
