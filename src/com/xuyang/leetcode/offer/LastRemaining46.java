@@ -6,8 +6,9 @@ import java.util.List;
 /**
  * @author Li Xuyang
  * @date 2020/4/2 16:50
+ * 孩子们的游戏(圆圈中最后剩下的数)
  */
-public class LastRemaining_Solution45 {
+public class LastRemaining46 {
 
     /*
       每年六一儿童节,牛客都会准备一些小礼物去看望孤儿院的小朋友,今年亦是如此。HF作为牛客的资深元老,自然也准备了一些小游戏。
