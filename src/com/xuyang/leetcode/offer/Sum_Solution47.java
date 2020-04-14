@@ -3,8 +3,9 @@ package com.xuyang.leetcode.offer;
 /**
  * @author Li Xuyang
  * @date 2020/4/2 17:08
+ * 求1+2+3+...+n
  */
-public class Sum_Solution46 {
+public class Sum_Solution47 {
     public static int sumSolution(int n) {
         //n*(n+1)/2
         int sum = (int) (Math.pow(n,2)+n);
