@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/3/29 15:19
  * 左旋转字符串
  */
-public class LeftRotateString42 {
+public class LeftRotateString43 {
 
     //左旋转字符串
 
@@ -28,6 +28,17 @@ public class LeftRotateString42 {
             temp.append(str.charAt(i));
         }
 
+        /*
+        public String substring(int beginIndex)
+
+        或
+
+        public String substring(int beginIndex, int endIndex)
+        参数
+        beginIndex -- 起始索引（包括）, 索引从 0 开始。
+
+        endIndex -- 结束索引（不包括）。
+         */
 
         str = str.substring(n) + temp.toString();
 
