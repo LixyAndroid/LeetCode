@@ -8,7 +8,7 @@ import java.util.Queue;
  * @date 2020/4/7 17:47
  * 字符流中第一个不重复的字符
  */
-public class FirstAppearingOnce53 {
+public class FirstAppearingOnce54 {
     /*
     题目描述
     请实现一个函数用来找出字符流中第一个只出现一次的字符。
