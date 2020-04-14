@@ -8,7 +8,7 @@ import java.util.Collections;
  * @date 2020/3/22 15:14
  * 字符串的排列
  */
-public class Permutation26 {
+public class Permutation27 {
 
 
 
@@ -123,7 +123,7 @@ public class Permutation26 {
 
     public static void main(String[] args) {
         String str = "abcd";
-        Permutation26 permutation26 = new Permutation26();
+        Permutation27 permutation26 = new Permutation27();
         ArrayList<String> strings = permutation26.permutation(str);
         System.out.println(strings);
 
