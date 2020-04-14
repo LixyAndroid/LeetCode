@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/4/11 17:45
  * 序列化二叉树
  */
-public class SerializeTree60 {
+public class SerializeTree61 {
     /*
     请实现两个函数，分别用来序列化和反序列化二叉树
     二叉树的序列化是指：
@@ -70,7 +70,7 @@ public class SerializeTree60 {
         treeNode3.left = treeNode5;
         treeNode3.right = treeNode6;
 
-        SerializeTree60 serializeTree = new SerializeTree60();
+        SerializeTree61 serializeTree = new SerializeTree61();
 
         String str = serializeTree.Serialize(treeNode1);
         TreeNode treeNode = serializeTree.Deserialize(str);
