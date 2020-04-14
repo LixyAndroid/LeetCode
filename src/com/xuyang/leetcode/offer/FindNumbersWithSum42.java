@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @date 2020/3/28 22:45
  * 和为S的两个数字
  */
-public class FindNumbersWithSum41 {
+public class FindNumbersWithSum42 {
 
 
     //硬着头皮解题就是了
