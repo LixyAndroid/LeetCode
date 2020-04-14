@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/3/22 22:31
  * 连续子数组的最大和
  */
-public class FindGreatestSumOfSubArray29 {
+public class FindGreatestSumOfSubArray30 {
 
 
     /*
