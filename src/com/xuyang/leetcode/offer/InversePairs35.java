@@ -6,7 +6,7 @@ package com.xuyang.leetcode.offer;
  * 数组中的逆序对
  * 复习归并排序
  */
-public class InversePairs34 {
+public class InversePairs35 {
 
 
     /*
@@ -75,7 +75,7 @@ public class InversePairs34 {
 
     public static void main(String[] args) {
 
-        InversePairs34 inversePairs34 = new InversePairs34();
+        InversePairs35 inversePairs34 = new InversePairs35();
         int[] array = {1,2,3,4,5,6,7,0};
 
         int cnt = inversePairs34.inversePairs(array);
