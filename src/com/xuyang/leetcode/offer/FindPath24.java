@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @date 2020/3/20 10:00
  * 二叉树中和为某一值的路径
  */
-public class FindPath23 {
+public class FindPath24 {
 
 
     /*
@@ -60,7 +60,7 @@ public class FindPath23 {
         root.right.val = 12;
 
 
-        FindPath23 findPath23 = new FindPath23();
+        FindPath24 findPath23 = new FindPath24();
         // 有两条路径上的结点和为22
         System.out.println("findPath(root, 22);");
         ArrayList<ArrayList<Integer>> result1 = findPath23.findPath(root, 22);
