@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @date 2020/4/4 14:46
  * 构建乘积数组
  */
-public class Multiply50 {
+public class Multiply51 {
 
     /*
     给定一个数组A[0,1,...,n-1],请构建一个数组B[0,1,...,n-1],其中B中的元素B[i]=A[0]*A[1]*...*A[i-1]*A[i+1]*...*A[n-1]。
