@@ -7,7 +7,7 @@ import java.util.Stack;
  * @date 2020/3/18 17:33
  * 栈的压入、弹出序列
  */
-public class IsPopOrder20 {
+public class IsPopOrder21 {
 
     //栈的压入、弹出序列
 
