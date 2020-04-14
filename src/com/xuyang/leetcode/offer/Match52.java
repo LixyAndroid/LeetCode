@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/4/4 15:16
  * 正则表达式匹配
  */
-public class Match51 {
+public class Match52 {
 
     /*
     请实现一个函数用来匹配包括'.'和'*'的正则表达式。
@@ -59,7 +59,7 @@ public class Match51 {
     public static void main(String[] args) {
         char[] str = {'a','a','a'};
         char[] pattern = {'a','b','*','a','c','*','a'};
-        Match51 match51 = new Match51();
+        Match52 match51 = new Match52();
         System.out.println(match51.match(str,pattern));
     }
 
