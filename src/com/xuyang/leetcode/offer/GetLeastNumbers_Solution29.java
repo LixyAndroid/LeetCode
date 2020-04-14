@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @date 2020/3/22 16:04
  * 最小的K个数
  */
-public class GetLeastNumbers_Solution28 {
+public class GetLeastNumbers_Solution29 {
 
 
     //输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4,。
