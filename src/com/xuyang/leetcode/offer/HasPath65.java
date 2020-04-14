@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/4/12 16:08
  * 矩阵中的路径
  */
-public class HasPath64 {
+public class HasPath65 {
 
     /*
     请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，
