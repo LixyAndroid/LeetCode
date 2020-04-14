@@ -8,7 +8,7 @@ import java.util.TreeSet;
  * @date 2020/3/29 18:03
  * 扑克牌顺子
  */
-public class isContinuous44 {
+public class IsContinuous45 {
 
     /*
     LL今天心情特别好,因为他去买了一副扑克牌,发现里面居然有2个大王,2个小王(一副牌原本是54张^_^)...他随机从中抽出了5张牌,想测测自己的手气,看看能不能抽到顺子,如果抽到的话,他决定去买体育彩票,嘿嘿！！“红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子.....LL不高兴了,
