@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @date 2020/3/28 22:02
  *和为S的连续正数序列
  */
-public class FindContinuousSequence40 {
+public class FindContinuousSequence41 {
 
     //和为S的连续正数序列
     //穷举法，从1开始
