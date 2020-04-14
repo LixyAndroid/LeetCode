@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/3/18 23:03
  * 二叉搜索树的后序遍历序列
  */
-public class VerifySquenceOfBST22 {
+public class VerifySquenceOfBST23 {
 
     /*
    二叉查找树（Binary Search Tree），（又：二叉搜索树，二叉排序树）它或者是一棵空树，或者是具有下列性质的二叉树：
