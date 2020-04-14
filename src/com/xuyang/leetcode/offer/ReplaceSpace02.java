@@ -3,11 +3,14 @@ package com.xuyang.leetcode.offer;
 /**
  * @author Li Xuyang
  * date  2019/8/6 16:43
- * 请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
+ *  替换空格
  *
  * 思路：自己的方法：扩大字符串长度，然后从后往前替换
  */
-public class replaceSpace02 {
+public class ReplaceSpace02 {
+
+
+    //  请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
 
     public static String replaceSpace(StringBuffer str) {
 
