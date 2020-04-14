@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/3/28 21:33
  * 平衡二叉树
  */
-public class IsBalanced_Solution38 {
+public class IsBalanced39 {
     //输入一棵二叉树，判断该二叉树是否是平衡二叉树。
 
     /*
