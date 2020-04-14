@@ -7,7 +7,7 @@ import java.util.HashMap;
  * @date 2020/3/28 21:45
  * 数组中只出现一次的数字
  */
-public class FindNumsAppearOnce39 {
+public class FindNumsAppearOnce40 {
 
     /*
     一个整型数组里除了两个数字之外，其他的数字都出现了两次。
