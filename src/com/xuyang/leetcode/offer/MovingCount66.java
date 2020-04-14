@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer;
  * @date 2020/4/12 16:43
  * 机器人的运动范围
  */
-public class MovingCount65 {
+public class MovingCount66 {
     /*
     地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，
     每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列坐标的数位之和大于k的格子。
@@ -56,7 +56,7 @@ public class MovingCount65 {
     }
 
     public static void main(String[] args) {
-        MovingCount65 movingCount65 = new MovingCount65();
+        MovingCount66 movingCount65 = new MovingCount66();
         int res = movingCount65.movingCount(18,4,4);
         System.out.println(res);
     }
