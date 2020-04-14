@@ -7,7 +7,7 @@ import java.util.HashMap;
  * @date 2020/4/4 14:27
  * 数组中重复的数字
  */
-public class Duplicate49 {
+public class Duplicate50 {
     //HashMap
 
     /*
@@ -61,7 +61,7 @@ public class Duplicate49 {
     }
 
     public static void main(String[] args) {
-        Duplicate49 duplicate49  = new Duplicate49();
+        Duplicate50 duplicate49  = new Duplicate50();
         int[] nums = {2,3,1,0,2,5,3};
         int[] duplication = {0,0};
         boolean res = duplicate49.duplicate(nums,nums.length,duplication);
