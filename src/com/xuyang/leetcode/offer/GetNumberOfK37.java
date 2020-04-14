@@ -9,7 +9,7 @@ import java.util.List;
  * @date 2020/3/27 15:24
  * 统计一个数字在排序数组中出现的次数。
  */
-public class GetNumberOfK36 {
+public class GetNumberOfK37 {
     //方法有很多的
     //1，暴力法
 
@@ -115,7 +115,7 @@ public class GetNumberOfK36 {
 
     public static void main(String[] args) {
 
-        GetNumberOfK36 getNumberOfK36 = new GetNumberOfK36();
+        GetNumberOfK37 getNumberOfK36 = new GetNumberOfK37();
 
         int[] array = {0, 0, 0, 1, 2, 3, 4, 4, 5, 5, 5, 5, 6};
 
