@@ -7,7 +7,7 @@ import java.util.HashSet;
  * @date 2020/4/10 20:08
  * 删除链表中重复的结点
  */
-public class DeleteDuplication55 {
+public class DeleteDuplication56 {
 
 
     //对指针又有了深层的理解
