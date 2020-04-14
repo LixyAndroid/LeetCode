@@ -6,8 +6,9 @@ import java.util.HashSet;
 /**
  * @author Li Xuyang
  * @date 2020/3/20 16:27
+ * 复杂链表的复制
  */
-public class Clone24 {
+public class Clone25 {
     public static RandomListNode clone(RandomListNode pHead) {
 
         if (pHead == null) {
