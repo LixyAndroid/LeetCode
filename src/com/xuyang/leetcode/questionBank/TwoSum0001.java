@@ -8,7 +8,7 @@ import java.util.Map;
  * @date 2020/4/19 14:56
  * 两数之和
  */
-public class twoSum0001 {
+public class TwoSum0001 {
 
 
     /*
