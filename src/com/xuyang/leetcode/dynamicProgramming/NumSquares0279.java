@@ -12,6 +12,15 @@ public class NumSquares0279 {
     /*
     动态规划
      */
+
+        /*
+
+    时间复杂度：O(n^2/3)，
+    在主步骤中，我们有一个嵌套循环，其中外部循环是 n 次迭代，
+    而内部循环最多需要 n^1/2迭代。
+    空间复杂度：O(n)，使用了一个一维数组 dp。
+     */
+
     public int numSquares(int n) {
         int dp[]=new int[n+1];
         Arrays.fill(dp,Integer.MAX_VALUE);
@@ -41,11 +50,23 @@ public class NumSquares0279 {
         return dp[n];
     }
 
-    /*
 
-    时间复杂度：O(n^2/3)，
-    在主步骤中，我们有一个嵌套循环，其中外部循环是 n 次迭代，
-    而内部循环最多需要 n^1/2迭代。
-空间复杂度：O(n)，使用了一个一维数组 dp。
-     */
+
+    public int numSquares2(int n){
+        //默认初始化值都为0
+        int[] dp = new  int[n+1];
+
+        for (int i = 0; i <= n; i++) {
+            //最坏的情况就是每次+1
+            dp[i]=i;
+
+            for (int j = 1; i-j*j>0; j++) {
+                // 动态转移方程
+                dp[i] = Math.min(dp[i],dp[i-j*j]+1);
+
+            }
+        }
+
+        return dp[n];
+    }
 }
