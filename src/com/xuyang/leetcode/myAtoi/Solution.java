@@ -1,26 +1,21 @@
 package com.xuyang.leetcode.myAtoi;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author Li Xuyang
  * date  2019/7/23 15:41
- * <p>
  * 字符串转换整数
- * <p>
- * 首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。
- * <p>
- * 当我们寻找到的第一个非空字符为正或者负号时，则将该符号与之后面尽可能多的连续数字组合起来，作为该整数的正负号；
- * 假如第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成整数。
- * <p>
- * 该字符串除了有效的整数部分之后也可能会存在多余的字符，这些字符可以被忽略，它们对于函数不应该造成影响。
- * <p>
- * 注意：假如该字符串中的第一个非空格字符不是一个有效整数字符、字符串为空或字符串仅包含空白字符时，则你的函数不需要进行转换。
- * <p>
- * 在任何情况下，若函数不能进行有效的转换时，请返回 0。
+
  */
 public class Solution {
+
+    /*
+     * 首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。
+     * 当我们寻找到的第一个非空字符为正或者负号时，则将该符号与之后面尽可能多的连续数字组合起来，作为该整数的正负号；
+     * 假如第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成整数。
+     * 该字符串除了有效的整数部分之后也可能会存在多余的字符，这些字符可以被忽略，它们对于函数不应该造成影响。
+     * 注意：假如该字符串中的第一个非空格字符不是一个有效整数字符、字符串为空或字符串仅包含空白字符时，则你的函数不需要进行转换。
+     * 在任何情况下，若函数不能进行有效的转换时，请返回 0。
+     */
 
     public static int myAtoi(String str) {
 
@@ -47,9 +42,10 @@ public class Solution {
                 break;
             }
         }
-        //定义初始返回0
+        //定义初始返回值
         int ret = 0;
 
+        //就是要找到i,j的区间的数字字符串，然后转换成数字
         String num = str.substring(i, j);
         for (int x = 0; x < num.length(); x++) {
             int cur = num.charAt(x) - '0';
@@ -58,6 +54,7 @@ public class Solution {
                 if (ret < Integer.MIN_VALUE / 10 || ret == Integer.MIN_VALUE / 10 && cur > 8) {
                     return Integer.MIN_VALUE;
                 }
+                //相当于负号
                 ret = ret * 10 - cur;
             } else {
                 if (ret > Integer.MAX_VALUE / 10 || ret == Integer.MAX_VALUE / 10 && cur > 7) {
