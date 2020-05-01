@@ -1,6 +1,5 @@
 package com.xuyang.leetcode.offer;
 
-import com.xuyang.leetcode.merge.Node;
 
 /**
  * @author Li Xuyang
