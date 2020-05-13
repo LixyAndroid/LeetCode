@@ -11,9 +11,9 @@ import java.util.List;
 public class LevelOrder0102 {
 
     //给你一个二叉树，请你返回其按 层序遍历 得到的节点值。 （即逐层地，从左到右访问所有节点）。
+
+    //递归
     List<List<Integer>> levels = new ArrayList<>();
-
-
     public void helper(TreeNode node, int level) {
         if (levels.size() == level) {
             levels.add(new ArrayList<Integer>());
@@ -41,6 +41,7 @@ public class LevelOrder0102 {
         return levels;
     }
 
+    //迭代
     public List<List<Integer>> levelOrder2(TreeNode root) {
         //按层遍历即可
         List<List<Integer>> lists = new ArrayList<>();
