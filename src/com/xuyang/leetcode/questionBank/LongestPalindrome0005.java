@@ -17,6 +17,7 @@ public class LongestPalindrome0005 {
     输入: "cbbd"
     输出: "bb"
      */
+    //暴力法
     public String longestPalindrome(String s) {
 
         if (s.equals("")) {
@@ -60,6 +61,41 @@ public class LongestPalindrome0005 {
         }
         return s.substring(maxEnd - maxLen + 1, maxEnd + 1);
 
+    }
+
+    //暴力法清晰版,最暴力
+    public String longestPalindrome3(String s) {
+        int len =s.length();
+        if (len<2){
+            return s;
+        }
+
+        int maxLen =1;
+        int begin =0;
+        //s.charAt(i)每次都会检查数组越界，因此先转成字符串数组，这一步非必须
+        char[] charArray = s.toCharArray();
+        //枚举长度大于1
+        for (int i = 0; i < len - 1; i++) {
+            for (int j = i+1; j < len; j++) {
+                if (j-i+1>maxLen&&valiPalindromir(charArray,i,j)){
+                    maxLen=j-i+1;
+                    begin=i;
+                }
+            }
+        }
+        return s.substring(begin,begin+maxLen);
+
+    }
+
+    private boolean valiPalindromir(char[] charArray, int left, int right) {
+        while (left<right){
+            if (charArray[left]!=charArray[right]){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
     }
 
 
