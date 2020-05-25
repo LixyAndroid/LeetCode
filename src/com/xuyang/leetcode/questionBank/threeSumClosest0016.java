@@ -1,18 +1,16 @@
-package com.xuyang.leetcode.threeSumClosest;
+package com.xuyang.leetcode.questionBank;
 
 import java.util.Arrays;
 
 /**
  * @author Li Xuyang
- * date  2019/8/2 20:26
+ * @date 2020/5/25 22:17
  * 最接近的三数之和
- * 给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。
- * <p>
- * 看到本题，首先要想到排序
- * 本解法用排序和双指针
  */
-public class Solution {
+public class threeSumClosest0016 {
 
+    //给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，
+    // 使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。
 
     public static int threeSumClosest(int[] nums, int target) {
 
@@ -41,6 +39,7 @@ public class Solution {
         //初始定义最接近的值，为前3个数的和
         int ans = nums[0] + nums[1] + nums[2];
         for (int i = 0; i < nums.length; i++) {
+            //又是双指针
             int start = i + 1, end = nums.length - 1;
             // start < end，保证遍历一遍
             while (start < end) {
@@ -69,6 +68,4 @@ public class Solution {
         int[] nums = {-1, 2, -4, 1};
         System.out.println(threeSumClosest(nums, 1));
     }
-
-
 }
