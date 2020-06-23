@@ -14,7 +14,7 @@ public class AddBinary0067 {
 
     输入为 非空 字符串且只包含数字 1 和 0。
      */
-    public static String addBinary(String a, String b) {
+    public  String addBinary(String a, String b) {
 
         int aLen = a.length() - 1;
         int bLen = b.length() - 1;
@@ -96,12 +96,13 @@ public class AddBinary0067 {
     }
 
     public static void main(String[] args) {
-        String res = addBinary("1010", "1011");
+        AddBinary0067 addBinary0067 = new AddBinary0067();
+
+        String res = addBinary0067.addBinary("101110", "1011");
         System.out.println(res);
 
-        AddBinary0067 addBinary0067 = new AddBinary0067();
-        String res2 = addBinary0067.addBinary2("1010", "1011");
-        System.out.println(res);
+        String res2 = addBinary0067.addBinary2("1010", "10110111111");
+        System.out.println(res2);
 
     }
 }
