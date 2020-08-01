@@ -5,7 +5,7 @@ package com.xuyang.leetcode.offer2;
  * @date 2020/8/1 22:05
  * 剑指 Offer 68 - II. 二叉树的最近公共祖先
  */
-public class LowestCommonAncestor68 {
+public class LowestCommonAncestor268 {
 
     /*
     给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
