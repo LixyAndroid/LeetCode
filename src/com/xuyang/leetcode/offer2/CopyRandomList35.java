@@ -76,7 +76,7 @@ public class CopyRandomList35 {
             p1 = p1.next;
         }
 
-        //处理random指针
+        //处理指针
         while (p2 != null) {
             if (p2.next != null) {
                 map.get(p2).next = map.get(p2.next);
