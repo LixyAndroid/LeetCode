@@ -79,11 +79,12 @@ public class CopyRandomList35 {
         //处理指针
         while (p2 != null) {
             if (p2.next != null) {
+                //指定next指针
                 map.get(p2).next = map.get(p2.next);
             } else {
                 map.get(p2).next = null;
             }
-
+            //指定random指针
             map.get(p2).random = map.get(p2.random);
             p2 = p2.next;
         }
