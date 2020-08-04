@@ -127,10 +127,10 @@ public class StrToInt67 {
         int index = 0, sign = 1;
 
         //正负号
-        if (str.charAt(index) == '-') {
+        if (c[index] == '-') {
             sign = -1;
             index += 1;
-        } else if (str.charAt(index) == '+') {
+        } else if (c[index] == '+') {
             index += 1;
         }
 
@@ -151,8 +151,8 @@ public class StrToInt67 {
 
     public static void main(String[] args) {
         StrToInt67 strToInt67 = new StrToInt67();
-        String str = "  - ";
-        int res = strToInt67.strToInt2(str);
+        String str = "  -23";
+        int res = strToInt67.strToInt3(str);
         System.out.println(res);
 
 
