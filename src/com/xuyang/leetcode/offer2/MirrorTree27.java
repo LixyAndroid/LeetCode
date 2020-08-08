@@ -1,6 +1,8 @@
 package com.xuyang.leetcode.offer2;
 
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -24,7 +26,8 @@ public class MirrorTree27 {
 开启递归 左子节点 mirrorTree(tmp) ，并将返回值作为 root 的 右子节点。
 返回值： 返回当前节点 root ；
 Q： 为何需要暂存 root 的左子节点？
-A： 在递归右子节点 “root.left = mirrorTree(root.right);root.left=mirrorTree(root.right);” 执行完毕后， root.leftroot.left 的值已经发生改变，此时递归左子节点 mirrorTree(root.left)mirrorTree(root.left) 则会出问题。
+A： 在递归右子节点 “root.left = mirrorTree(root.right);root.left=mirrorTree(root.right);” 执行完毕后，
+ root.leftroot.left 的值已经发生改变，此时递归左子节点 mirrorTree(root.left)mirrorTree(root.left) 则会出问题。
 
      */
     //递归的神奇
@@ -75,6 +78,22 @@ A： 在递归右子节点 “root.left = mirrorTree(root.right);root.left=mirro
 
         return root;
     }
+
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) return null;
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode current = queue.poll();
+            TreeNode temp = current.left;
+            current.left = current.right;
+            current.right = temp;
+            if (current.left != null) queue.add(current.left);
+            if (current.right != null) queue.add(current.right);
+        }
+        return root;
+    }
+
 
 
 }
