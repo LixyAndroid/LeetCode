@@ -8,37 +8,37 @@ import java.text.DecimalFormat;
  */
 public class Main {
     public static void main(String[] args) {
-        double pi = 3;//圆周率
-    //取一位整数
+        double pi = 3.146;//圆周率
+        //取一位整数
         System.out.println(new DecimalFormat("0").format(pi));//3
-    //取一位整数和两位小数
+        //取一位整数和两位小数
         System.out.println(new DecimalFormat("0.00").format(pi));//3.14
-    //取两位整数和三位小数，整数不足部分以0填补。
+        //取两位整数和三位小数，整数不足部分以0填补。
         System.out.println(new DecimalFormat("00.000").format(pi));// 03.142
-    //取所有整数部分
+        //取所有整数部分
         System.out.println(new DecimalFormat("#").format(pi));//3
-    //以百分比方式计数，并取两位小数
+        //以百分比方式计数，并取两位小数
         System.out.println(new DecimalFormat("#.##%").format(pi));//314.16%
 
         /**
          * 上面的代码就是网上很经典的案例，下面我们来分析另外的一个值
          */
-        pi=12.34567;
-    //取一位整数
+        pi = 12.34567;
+        //取一位整数
         System.out.println(new DecimalFormat("0").format(pi));//12
-    //取一位整数和两位小数
+        //取一位整数和两位小数
         System.out.println(new DecimalFormat("0.00").format(pi));//12.35
-    //取两位整数和三位小数，整数不足部分以0填补。
+        //取两位整数和三位小数，整数不足部分以0填补。
         System.out.println(new DecimalFormat("00.000").format(pi));// 12.346
-    //取所有整数部分
+        //取所有整数部分
         System.out.println(new DecimalFormat("#").format(pi));//12
-    //以百分比方式计数，并取两位小数
+        //以百分比方式计数，并取两位小数
         System.out.println(new DecimalFormat("#.##%").format(pi));//1234.57%
 
 /**
  * 扩展，如果是其他的数字会是下面的效果
  */
-        pi=12.34;
+        pi = 12.34;
 //整数
         System.out.println(new DecimalFormat("6").format(pi));//612
         System.out.println(new DecimalFormat("60").format(pi));//612
