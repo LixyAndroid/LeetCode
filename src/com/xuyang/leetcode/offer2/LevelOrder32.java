@@ -11,6 +11,7 @@ import java.util.Queue;
  */
 public class LevelOrder32 {
     //从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
+    //只需要一直加就好了
     public int[] levelOrder(TreeNode root) {
         if (root == null) {
             return new int[0];
