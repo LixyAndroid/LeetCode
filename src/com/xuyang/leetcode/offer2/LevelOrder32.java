@@ -16,7 +16,7 @@ public class LevelOrder32 {
         if (root == null) {
             return new int[0];
         }
-        Queue<TreeNode> queue = new LinkedList<>() {
+        Queue<TreeNode> queue = new LinkedList<TreeNode>() {
             {
                 add(root);
             }

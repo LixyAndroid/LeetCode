@@ -59,7 +59,7 @@ A： 在递归右子节点 “root.left = mirrorTree(root.right);root.left=mirro
         if (root == null) {
             return null;
         }
-        Stack<TreeNode> stack = new Stack<>() {{
+        Stack<TreeNode> stack = new Stack<TreeNode>() {{
             add(root);
         }};
         while (!stack.isEmpty()) {

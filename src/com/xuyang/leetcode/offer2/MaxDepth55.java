@@ -42,7 +42,7 @@ public class MaxDepth55 {
      */
     public int maxDepth2(TreeNode root) {
 
-        List<TreeNode> queue = new LinkedList<>() {{
+        List<TreeNode> queue = new LinkedList<TreeNode>() {{
             add(root);
         }}, tmp;
         int res = 0;
