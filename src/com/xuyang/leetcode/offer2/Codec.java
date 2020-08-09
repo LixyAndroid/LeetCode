@@ -1,6 +1,5 @@
 package com.xuyang.leetcode.offer2;
 
-import java.sql.Array;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
