@@ -42,14 +42,15 @@ public class BuildTree07 {
         for (int i = 0; i < length; i++) {
             indexMap.put(inorder[i], i);
         }
-        TreeNode root = buildTree(preorder, 0, length - 1, inorder, 0, length - 1, indexMap);
-        return root;
+        return buildTree(preorder, 0, length - 1, inorder, 0, length - 1, indexMap);
     }
 
     private TreeNode buildTree(int[] preorder, int preorderStart, int preorderEnd, int[] inorder, int inorderStart, int inorderEnd, Map<Integer, Integer> indexMap) {
         if (preorderStart > preorderEnd) {
             return null;
         }
+        // 前序遍历中的第一个节点就是根节点
+
         int rootVal = preorder[preorderStart];
         TreeNode root = new TreeNode(rootVal);
         if (preorderStart == preorderEnd) {
@@ -58,7 +59,7 @@ public class BuildTree07 {
             int rootIndex = indexMap.get(rootVal);
             int leftNodes = rootIndex - inorderStart, rightNodes = inorderEnd - rootIndex;
             TreeNode leftSubtree = buildTree(preorder, preorderStart + 1, preorderStart + leftNodes, inorder, inorderStart, rootIndex - 1, indexMap);
-            TreeNode rightSubtree = buildTree(preorder, preorderEnd - rightNodes + 1, preorderEnd, inorder, inorderStart, rootIndex + 1, indexMap);
+            TreeNode rightSubtree = buildTree(preorder, preorderEnd - rightNodes + 1, preorderEnd, inorder, rootIndex+1, inorderEnd, indexMap);
             root.left = leftSubtree;
             root.right = rightSubtree;
             return root;
