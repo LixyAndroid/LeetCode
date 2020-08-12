@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class KthLargest54 {
     ArrayList<Integer> list = new ArrayList<>();
 
+    //中序有序 二叉搜索树
     public int kthLargest(TreeNode root, int k) {
         dfs(root);
         return list.get(list.size() - k);

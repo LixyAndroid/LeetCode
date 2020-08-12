@@ -13,53 +13,61 @@ package com.xuyang.leetcode.sorting;
  */
 public class QuickSort {
 
-    public static void quick(int[] values, int low, int high) {
+    public static void quickSort(int[] values, int low, int high) {
 
-        //判断检查低序号是否小于高序号， 若为false,则表示完成了集合的排序，分割到了不可分割位置,
-        if (low < high) {
-            //下一次子集分区时的分隔点序号index
-            int index = partition(values, low, high);
-            quick(values, low, index - 1);
-            quick(values, index + 1, high);
-        }
-
-    }
-
-
-
-    private static int partition(int[] values, int low, int high) {
-
-        //选最后一个对象为基准
-        int pivot = values[high];
-        int i = (low - 1);
-
-        //遍历
-        for (int j = low; j < high - 1; j++) {
-
-            //如果j处的值，小于等于最高位处的值 就执行交换，把i处的值和j处交换
-            if (values[j] <= pivot) {
-
-                //i先加+
-                i++;
-
-                //i和j处的值交换，
-                int temp = values[i];
-                values[i] = values[j];
-                values[j] = temp;
-
+        int l = low; //左下标
+        int r = high; //右下标
+        //pivot 中轴值
+        int pivot = values[(low + high) / 2];
+        int temp = 0; //临时变量，作为交换时使用
+        //while循环的目的是让比pivot 值小放到左边
+        //比pivot 值大放到右边
+        while (l < r) {
+            //在pivot的左边一直找,找到大于等于pivot值,才退出
+            while (values[l] < pivot) {
+                l += 1;
+            }
+            //在pivot的右边一直找,找到小于等于pivot值,才退出
+            while (values[r] > pivot) {
+                r -= 1;
+            }
+            //如果l >= r说明pivot 的左右两的值，已经按照左边全部是
+            //小于等于pivot值，右边全部是大于等于pivot值
+            if (l >= r) {
+                break;
             }
 
+            //交换
+            temp = values[l];
+            values[l] = values[r];
+            values[r] = temp;
+
+            //如果交换完后，发现这个values[l] == pivot值 相等 r--， 前移
+            if (values[l] == pivot) {
+                r -= 1;
+            }
+            //如果交换完后，发现这个values[r] == pivot值 相等 l++， 后移
+            if (values[r] == pivot) {
+                l += 1;
+            }
         }
 
-        i++;
-        int temp = values[i];
-        values[i] = values[high];
-        values[high] = temp;
-
-
-        return i;
+        // 如果 l == r, 必须l++, r--, 否则为出现栈溢出
+        if (l == r) {
+            l += 1;
+            r -= 1;
+        }
+        //向左递归
+        if (low < r) {
+            quickSort(values, low, r);
+        }
+        //向右递归
+        if (high > l) {
+            quickSort(values, l, high);
+        }
 
     }
+
 
     public static void main(String[] args) {
 
@@ -71,7 +79,7 @@ public class QuickSort {
         }
 
         //排序
-        quick(values, 0, values.length - 1);
+        quickSort(values, 0, values.length - 1);
 
         System.out.println("");
         System.out.print("排序后: ");

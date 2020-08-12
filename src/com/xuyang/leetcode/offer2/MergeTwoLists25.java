@@ -19,6 +19,7 @@ public class MergeTwoLists25 {
         }
          */
 
+        //伪头结点，temp 去遍历
         ListNode res = new ListNode(0);
         ListNode temp = res;
 

@@ -13,7 +13,7 @@ public class ReversePrint06 {
     //输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
     public int[] reversePrint(ListNode head) {
 
-        //练习反转二叉树
+        //练习反转链表
         ArrayList<Integer> list = new ArrayList<>();
         ListNode cur = null, pre = head;
         while (pre != null) {
@@ -64,7 +64,7 @@ public class ReversePrint06 {
 
     public ListNode reversePrint3(ListNode head) {
 
-        //练习反转二叉树
+        //练习反转链表
         ListNode cur = null, pre = head;
         while (pre != null) {
             //存下一位
