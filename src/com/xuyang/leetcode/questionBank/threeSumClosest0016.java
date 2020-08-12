@@ -9,8 +9,8 @@ import java.util.Arrays;
  */
 public class threeSumClosest0016 {
 
-    //给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，
-    // 使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。
+    //给定一个包括n 个整数的数组nums和 一个目标值target。找出nums中的三个整数，
+    // 使得它们的和与target最接近。返回这三个数的和。假定每组输入只存在唯一答案。
 
     public static int threeSumClosest(int[] nums, int target) {
 
@@ -49,7 +49,6 @@ public class threeSumClosest0016 {
                 if (Math.abs(target - sum) < Math.abs(target - ans)) {
                     ans = sum;
                 }
-
 
                 if (sum > target) { //关键就在于这里，因为已经排序了，若3数之和大于target 则前移即现在值大了，需要减小
                     end--;
