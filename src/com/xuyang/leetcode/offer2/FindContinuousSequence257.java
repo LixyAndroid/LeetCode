@@ -34,7 +34,7 @@ public class FindContinuousSequence257 {
                     arr[k - i] = k;
                 }
                 resList.add(arr);
-                //左边界向右移动
+                //左边界向右移动,因为这里加入顺序是从小数开始，所以长度是最长的，需要右移动
                 sum -= i;
                 i++;
             }
