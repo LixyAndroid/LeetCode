@@ -12,6 +12,7 @@ import java.util.Stack;
  */
 public class traversal {
 
+    //数组转换成树
     public static TreeNode arraytotree(int[] arr, int strat, int end) {
 
         TreeNode root = null;
