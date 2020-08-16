@@ -1,13 +1,12 @@
-package com.xuyang.leetcode.sortList;
+package com.xuyang.leetcode.questionBank;
+
 
 /**
  * @author Li Xuyang
- * date  2019/7/28 22:12
- * <p>
+ * @date 2020/8/16 23:02
  * 排序链表
  */
-public class Solution {
-
+public class SortList148 {
     /**
      * 参考：Sort List——经典（链表中的归并排序） https://www.cnblogs.com/qiaozhoulin/p/4585401.html
      * <p>
@@ -103,7 +102,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution sortNode = new Solution();
+        SortList148 sortNode = new SortList148();
 
         //链表的头指针
         ListNode head = null;
@@ -124,6 +123,4 @@ public class Solution {
         System.out.println("排序链表后：");
         sortNode.printList(head);
     }
-
-
 }
