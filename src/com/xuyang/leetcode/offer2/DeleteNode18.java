@@ -59,7 +59,7 @@ public class DeleteNode18 {
      *
      * @param data
      */
-    public  ListNode insertNode(int data, ListNode head) {
+    public ListNode insertNode(int data, ListNode head) {
         ListNode node = new ListNode(data);
         if (head == null) {
             head = node;
