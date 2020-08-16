@@ -13,10 +13,10 @@ public class MaxDepth55 {
     // DFS, 深度优先遍历
     /*
     算法解析：
-    终止条件： 当 root​ 为空，说明已越过叶节点，因此返回 深度 00 。
+    终止条件： 当 root 为空，说明已越过叶节点，因此返回 深度 00 。
     递推工作： 本质上是对树做后序遍历。
-    计算节点 root​ 的 左子树的深度 ，即调用 maxDepth(root.left)；
-    计算节点 root​ 的 右子树的深度 ，即调用 maxDepth(root.right)；
+    计算节点 root 的 左子树的深度 ，即调用 maxDepth(root.left)；
+    计算节点 root 的 右子树的深度 ，即调用 maxDepth(root.right)；
     返回值： 返回 此树的深度 ，即 max(maxDepth(root.left), maxDepth(root.right)) + 1。
      */
     public int maxDepth(TreeNode root) {
@@ -31,7 +31,7 @@ public class MaxDepth55 {
     // 关键：每遍历一层，则计数器+1，直到遍历完成，则可得到树的深度。
 
     /*
-    特例处理： 当 root​ 为空，直接返回 深度 00 。
+    特例处理： 当 root 为空，直接返回 深度 0 。
     初始化： 队列 queue （加入根节点 root ），计数器 res = 0。
     循环遍历： 当 queue 为空时跳出。
     初始化一个空列表 tmp ，用于临时存储下一层节点；
@@ -47,6 +47,7 @@ public class MaxDepth55 {
         }}, tmp;
         int res = 0;
         while (!queue.isEmpty()) {
+            //这里容易出错！！
             tmp = new LinkedList<>();
             for (TreeNode node : queue) {
                 if (node.left != null) {
@@ -58,6 +59,33 @@ public class MaxDepth55 {
             }
             queue = tmp;
             res++;
+        }
+        return res;
+    }
+
+    //主要学习树的层序遍历
+    public int maxDepth3(TreeNode root) {
+
+        List<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int res = 0;
+        while (!queue.isEmpty()) {
+            List<TreeNode> temp = new LinkedList<>();
+            //把一层都加入到temp
+            for (TreeNode node : queue) {
+                if (node.left != null) {
+                    temp.add(node.left);
+                }
+
+                if (node.right != null) {
+                    temp.add(node.right);
+                }
+
+            }
+            queue = temp;
+            res += 1;
+
+
         }
         return res;
     }
