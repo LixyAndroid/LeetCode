@@ -31,7 +31,5 @@ public class FindNthDigit44 {
         long num = start + (n - 1) / digit;
         //3. 确定所求数位在 num 的哪一数位
         return Long.toString(num).charAt((n - 1) % digit) - '0';
-
-
     }
 }
