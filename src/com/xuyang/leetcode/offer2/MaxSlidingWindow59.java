@@ -31,6 +31,7 @@ public class MaxSlidingWindow59 {
         return res;
     }
 
+    //双端队列 deque
     public static int[] maxSlidingWindow2(int[] nums, int k) {
         if (nums.length == 0 || k == 0) { //判空
             return new int[0];
@@ -56,7 +57,6 @@ public class MaxSlidingWindow59 {
             }
             deque.addLast(nums[i]);
             res[i - k + 1] = deque.peekFirst();
-
         }
 
         return res;
