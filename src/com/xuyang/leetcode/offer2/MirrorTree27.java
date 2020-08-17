@@ -63,13 +63,15 @@ A： 在递归右子节点 “root.left = mirrorTree(root.right);root.left=mirro
             add(root);
         }};
         while (!stack.isEmpty()) {
+            //待交换待结点
             TreeNode node = stack.pop();
-            if (node.left != null) {
+            if (node.left != null) { //存左结点
                 stack.add(node.left);
             }
-            if (node.right != null) {
+            if (node.right != null) { //存右结点
                 stack.add(node.right);
             }
+            //交换左右结点
             TreeNode tmp = node.left;
             node.left = node.right;
             node.right = tmp;
