@@ -22,7 +22,7 @@ public class MyPow16 {
 
         //二分
         while (b > 0) {
-            if ((b & 1) == 1) {
+            if ((b & 1) == 1) { //即 b%2 == 1
                 res *= x;
             }
             x *=x;
