@@ -29,7 +29,7 @@ public class FindNthDigit44 {
         }
         //2. 确定所求数位所在的数字
         long num = start + (n - 1) / digit;
-        //3. 确定所求数位在 numnum 的哪一数位
+        //3. 确定所求数位在 num 的哪一数位
         return Long.toString(num).charAt((n - 1) % digit) - '0';
 
 
