@@ -51,6 +51,7 @@ public class MergeTwoLists25 {
     //递归
     public static ListNode merge2(ListNode list1, ListNode list2) {
 
+        //递归结束条件，递归的使用一定先想递归结束条件
         if (list1 == null) {
             return list2;
         } else if (list2 == null) {
@@ -59,7 +60,6 @@ public class MergeTwoLists25 {
 
         ListNode mergeNode = list1;
         if (list1.val < list2.val) {
-
             mergeNode.next = merge2(list1.next, list2);
         } else {
             //不能少了这句
