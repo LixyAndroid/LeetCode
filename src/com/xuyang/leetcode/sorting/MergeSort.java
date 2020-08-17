@@ -12,6 +12,9 @@ package com.xuyang.leetcode.sorting;
  * 第三步：比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置
  * 重复步骤3直到某一指针超出序列尾
  * 将另一序列剩下的所有元素直接复制到合并序列尾
+ *  归并排序
+ *  时间复杂度：O(nlogn)
+ *  空间复杂度：O(N)
  */
 public class MergeSort {
 
@@ -53,6 +56,71 @@ public class MergeSort {
 
     }
 
+    public static void mergeSort(int[] arr, int left, int right, int[] temp) {
+        if (left < right) {
+            int mid = (left + right) / 2;//中间索引
+
+            //向左递归分解
+            mergeSort(arr, left, mid, temp);
+
+            //向右递归进行分解
+            mergeSort(arr, mid + 1, right, temp);
+            merge2(arr, left, mid, right, temp);
+        }
+    }
+
+    private static void merge2(int[] arr, int left, int mid, int right, int[] temp) {
+        int i = left;//初始化i,左边有序序列的初始索引
+        int j = mid + 1; //初始化j,右边有序序列的初始索引
+        int t = 0; //指向temp数组的当前索引
+
+        //（一）
+        //先把左右两边（有序）的数据按照规则填充到temp数组
+        //直到左右两边都是有序序列
+        while (i <= mid && j <= right) {
+            //如果左边有序序列的当前元素，小于等于右边有序序列的当前元素
+            //即将左边的当前元素，填充到temp数组
+            //然后t++，i++
+            if (arr[i] <= arr[j]) {
+                temp[t] = arr[i];
+                t += 1;
+                i += 1;
+            } else {
+                temp[t] = arr[j];
+                t += 1;
+                j += 1;
+            }
+
+        }
+
+        //（二）
+        //把剩余数据到一边的数据依次填充到temp
+        while (i <= mid) {
+            temp[t] = arr[i];
+            t += 1;
+            i += 1;
+        }
+
+        while (j <= right) {
+            temp[t] = arr[j];
+            t += 1;
+            j += 1;
+        }
+
+        //(三)
+        //将temp数组到元素拷贝到arr
+        //注意，并不是每一次都是拷贝所有
+        t = 0;
+        int tempLeft = left;
+        while (tempLeft <= right) {
+            arr[tempLeft] = temp[t];
+            t += 1;
+            tempLeft += 1;
+        }
+
+    }
+
+
     public static void main(String[] args) {
 
         int[] values = {4, 89, 3, 8, 81, 1, 45, 56, 7, 6, 17, 9, 41, 65, 21};
@@ -61,9 +129,11 @@ public class MergeSort {
         for (int i = 0; i < values.length; i++) {
             System.out.print(values[i] + " ");
         }
+        int temp[] = new int[values.length];//归并排序需要一个额外的空间
+
 
         //排序
-        merge(values, 0, values.length - 1);
+        mergeSort(values, 0, values.length - 1,temp);
 
         System.out.println("");
         System.out.print("排序后: ");
