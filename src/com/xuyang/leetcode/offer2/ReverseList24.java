@@ -20,17 +20,17 @@ public class ReverseList24 {
 
     public ListNode reverseList(ListNode head) {
         //cur用来输出，pre用来遍历
-        ListNode cur = null, pre = head;
-        while (pre != null) {
+        ListNode pre = null, cur = head;
+        while (cur != null) {
             //存下一位
-            ListNode temp = pre.next;
+            ListNode temp = cur.next;
             //反转
-            pre.next = cur;
-            cur = pre;
+            cur.next = pre;
+            pre = cur;
             //遍历
-            pre = temp;
+            cur = temp;
         }
-        return cur;
+        return pre;
     }
 
     //递归
