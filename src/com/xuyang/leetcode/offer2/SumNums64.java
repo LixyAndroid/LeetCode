@@ -1,11 +1,11 @@
-package com.xuyang.leetcode.questionBank;
+package com.xuyang.leetcode.offer2;
 
 /**
  * @author Li Xuyang
  * @date 2020/6/2 21:40
- * 求1+2+…+n
+ * 剑指 Offer 64. 求1+2+…+n
  */
-public class SumNums0064 {
+public class SumNums64 {
 
     /*
     求 1+2+...+n ，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。
@@ -33,9 +33,9 @@ public class SumNums0064 {
     }
 
     public static void main(String[] args) {
-        SumNums0064 sumNums0064 = new SumNums0064();
+        SumNums64 sumNums64 = new SumNums64();
 
-        int res = sumNums0064.sumNums(2);
+        int res = sumNums64.sumNums(2);
         System.out.println(res);
     }
 
