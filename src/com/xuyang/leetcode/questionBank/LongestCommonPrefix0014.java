@@ -29,6 +29,29 @@ public class LongestCommonPrefix0014 {
         return prefix;
     }
 
+    //public int indexOf(int ch): 返回指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。
+    //
+    //public int indexOf(int ch, int fromIndex): 返回从 fromIndex 位置开始查找指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。
+    //
+    //int indexOf(String str): 返回指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。
+    //
+    //int indexOf(String str, int fromIndex): 返回从 fromIndex 位置开始查找指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1。
+    public static String longestCommonPrefix3(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+
+        String res = strs[0];
+        int i = 1;
+        while (i < strs.length) {
+            while (strs[i].indexOf(res) != 0) {
+                res = res.substring(0, res.length() - 1);
+            }
+            i += 1;
+        }
+        return res;
+    }
+
     /*
      算法二：水平扫描
     算法
