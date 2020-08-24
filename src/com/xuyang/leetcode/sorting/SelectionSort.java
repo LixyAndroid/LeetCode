@@ -9,7 +9,7 @@ package com.xuyang.leetcode.sorting;
  */
 public class SelectionSort {
 
-    public static void selction(int[] values) {
+    public static void selection(int[] values) {
 
         //若需要排序的数组长度 <= 1 直接返回，不需要下述判断
         if (values.length <= 1) {
@@ -53,7 +53,7 @@ public class SelectionSort {
         }
 
         //排序
-        selction(values);
+        selection(values);
 
         System.out.println("");
         System.out.print("排序后: ");
