@@ -65,31 +65,31 @@ public class LongestPalindrome0005 {
 
     //暴力法清晰版,最暴力
     public String longestPalindrome3(String s) {
-        int len =s.length();
-        if (len<2){
+        int len = s.length();
+        if (len < 2) {
             return s;
         }
 
-        int maxLen =1;
-        int begin =0;
+        int maxLen = 1;
+        int begin = 0;
         //s.charAt(i)每次都会检查数组越界，因此先转成字符串数组，这一步非必须
         char[] charArray = s.toCharArray();
         //枚举长度大于1
         for (int i = 0; i < len - 1; i++) {
-            for (int j = i+1; j < len; j++) {
-                if (j-i+1>maxLen&&valiPalindromir(charArray,i,j)){
-                    maxLen=j-i+1;
-                    begin=i;
+            for (int j = i + 1; j < len; j++) {
+                if (j - i + 1 > maxLen && valiPalindromir(charArray, i, j)) {
+                    maxLen = j - i + 1;
+                    begin = i;
                 }
             }
         }
-        return s.substring(begin,begin+maxLen);
+        return s.substring(begin, begin + maxLen);
 
     }
 
     private boolean valiPalindromir(char[] charArray, int left, int right) {
-        while (left<right){
-            if (charArray[left]!=charArray[right]){
+        while (left < right) {
+            if (charArray[left] != charArray[right]) {
                 return false;
             }
             left++;
@@ -116,18 +116,21 @@ public class LongestPalindrome0005 {
         int start = 0, end = 0;
         for (int i = 0; i < s.length(); i++) {
 
-            int len1 = expandAroundCenter(s,i,i);
-            int len2 = expandAroundCenter(s,i,i+1);
+            //i为中心
+            int len1 = expandAroundCenter(s, i, i);
+            //i i+1为中心
+            int len2 = expandAroundCenter(s, i, i + 1);
 
-            int len = Math.max(len1,len2);
-            if (len>end-start){
-                start = i-(len-1)/2;
-                end=i+len/2;
+            int len = Math.max(len1, len2);
+            //更新start end
+            if (len > end - start) {
+                start = i - (len - 1) / 2;
+                end = i + len / 2;
             }
 
         }
 
-        return s.substring(start,end+1);
+        return s.substring(start, end + 1);
 
     }
 
