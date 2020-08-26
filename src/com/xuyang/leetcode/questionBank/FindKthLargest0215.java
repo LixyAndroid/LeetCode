@@ -90,6 +90,8 @@ public class FindKthLargest0215 {
 
     //最小值堆
     public int findKthLargest3(int[] nums, int k) {
+        //  PriorityQueue<Integer> heap = new PriorityQueue<>((n1,n2) -> n2-n1); //小的
+        //默认找大的，
         PriorityQueue<Integer> heap = new PriorityQueue<>((n1,n2) -> n1-n2);
         for (int num:nums){
             heap.add(num);
