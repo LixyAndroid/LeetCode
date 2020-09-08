@@ -1,7 +1,5 @@
 package com.xuyang.leetcode.offer2;
 
-import com.xuyang.leetcode.offer.HasSubtree17;
-
 /**
  * @author Li Xuyang
  * @date 2020/7/30 23:38
@@ -35,7 +33,7 @@ public class ReverseList24 {
 
     //递归
     //使用递归函数，一直递归到链表的最后一个结点，该结点就是反转后的头结点，记作 ret .
-    //此后，每次函数在返回的过程中，让当前结点的下一个结点的 nextnext 指针指向当前节点。
+    //此后，每次函数在返回的过程中，让当前结点的下一个结点的 next 指针指向当前节点。
     //同时让当前结点的 next 指针指向 NULL ，从而实现从链表尾部开始的局部反转
     //当递归函数全部出栈后，链表反转完成。
 

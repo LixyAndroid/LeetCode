@@ -44,9 +44,9 @@ public class LevelOrder332 {
             for (int i = queue.size(); i > 0; i--) {
 
                 TreeNode node = queue.poll();
-                if (res.size() % 2 == 0) {//偶数层 -》队列头部
+                if (res.size() % 2 == 0) {//偶数层 -》说明现在奇数层 队列尾部
                     tmp.addLast(node.val);
-                } else { //奇数层 -》 队列尾部
+                } else { //奇数层 -》说明现在是偶数 队列头部，从右往左
                     tmp.addFirst(node.val);
                 }
                 if (node.left != null) {

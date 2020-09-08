@@ -22,7 +22,7 @@ public class IsValid0020 {
 
     public boolean isValid(String s) {
 // Initialize a stack to be used in the algorithm.
-        Stack<Character> stack = new Stack<Character>();
+        Stack<Character> stack = new Stack<>();
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
