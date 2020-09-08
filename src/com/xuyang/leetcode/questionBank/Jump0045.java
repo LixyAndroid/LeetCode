@@ -40,19 +40,17 @@ public class Jump0045 {
     /*
     我们知道最终要到达最后一个位置，然后我们找前一个位置，遍历数组，
     找到能到达它的位置，离它最远的就是要找的位置。然后继续找上上个位置，最后到了第 0 个位置就结束了。
-
     至于离它最远的位置，其实我们从左到右遍历数组，第一个满足的位置就是我们要找的。
-
      */
 
     public int jump2(int[] nums) {
         //要找的位置
         int position = nums.length - 1;
         int steps = 0;
-        while (position!=0){
+        while (position != 0) {
             for (int i = 0; i < position; i++) {
-                if (nums[i]>=position-i){
-                    position=i; //更新要找 的位置
+                if (nums[i] >= position - i) {
+                    position = i; //更新要找的位置
                     steps++;
                     break;
                 }
@@ -62,9 +60,9 @@ public class Jump0045 {
     }
 
     public static void main(String[] args) {
-        Jump0045 jump0045 =new Jump0045();
-        int[] nums = {2,3,1,1,4};
-        int res = jump0045.jump(nums);
+        Jump0045 jump0045 = new Jump0045();
+        int[] nums = {2, 3, 1, 1, 4};
+        int res = jump0045.jump2(nums);
         System.out.println(res);
     }
 }
