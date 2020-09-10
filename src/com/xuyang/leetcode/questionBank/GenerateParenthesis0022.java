@@ -17,7 +17,6 @@ public class GenerateParenthesis0022 {
     }
 
     private void backtrack(List<String> ans, StringBuilder cur, int open, int close, int max) {
-
         if (cur.length() == max * 2) {
             ans.add(cur.toString());
             return;
