@@ -54,8 +54,7 @@ public class AddBinary0067 {
             if (bNum == 1) {
                 isCarry++;
             }
-
-
+            
             if (isCarry % 2 == 1) {
                 res.append("1");
             } else {
