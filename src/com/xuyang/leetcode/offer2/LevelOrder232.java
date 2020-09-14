@@ -38,7 +38,6 @@ public class LevelOrder232 {
                     queue.add(node.right);
                 }
 
-
             }
 
             res.add(list);
