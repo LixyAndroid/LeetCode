@@ -13,22 +13,24 @@ public class IsSymmetrical58 {
     就是按题意先画一棵“大”一点的对称二叉树，
     然后按树的一层一层比较一下，看看怎么算是满足对称的二叉树，思路就有了。
      */
-    public boolean judge(TreeNode node1,TreeNode node2){
+    public boolean judge(TreeNode node1, TreeNode node2) {
 
-        if (node1==null&&node2==null){
+        //都为空的时候返回true
+        if (node1 == null && node2 == null) {
             return true;
-        }else if (node1==null||node2==null){
+        }
+
+        //某一个为空，或者值不相等返回false
+        if (node1 == null || node2 == null || node1.val != node2.val) {
             return false;
         }
 
-        if (node1.val !=node2.val){
-            return false;
-        }else {
-            return judge(node1.left,node2.right)&&judge(node1.right,node2.left);
-        }
+        //判断左，右&&右左
+        return judge(node1.left, node2.right) && judge(node1.right, node2.left);
+
     }
 
-    public boolean isSymmetrical(TreeNode pRoot){
-        return pRoot==null||judge(pRoot.left,pRoot.right);
+    public boolean isSymmetrical(TreeNode pRoot) {
+        return pRoot == null || judge(pRoot.left, pRoot.right);
     }
 }
