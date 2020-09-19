@@ -20,42 +20,39 @@ public class GetUglyNumber_Solution33 {
     所以我们要维持三个指针来记录当前乘以2、乘以3、乘以5的最小值，然后当其被选为新的最小值后，要把相应的指针+1；
     因为这个指针会逐渐遍历整个数组，因此最终数组中的每一个值都会被乘以2、乘以3、乘以5，也就是实现了我们最开始的想法，只不过不是同时成乘以2、3、5，而是在需要的时候乘以2、3、5.
      */
-    public  static int getUglyNumber_Solution(int index){
+    public static int getUglyNumber_Solution(int index) {
 
-        if (index<=0){
+        if (index <= 0) {
             return 0;
         }
 
         //用一个index长度的数组
         int[] result = new int[index];
-
-
         //初始化三个指向三个潜在成为最小丑数的位置
-        int p2=0,p3=0,p5=0;
+        int p2 = 0, p3 = 0, p5 = 0;
         //给第一个位置赋值1
-        result[0]=1;
+        result[0] = 1;
 
         for (int i = 1; i < index; i++) {
 
-            result[i] = Math.min(result[p2]*2,Math.min(result[p3]*3,result[p5]*5));
+            result[i] = Math.min(result[p2] * 2, Math.min(result[p3] * 3, result[p5] * 5));
             //保证3个if都能取到
-            if (result[i] ==result[p2]*2 ){
+            if (result[i] == result[p2] * 2) {
                 p2++;
             }
 
             //保证3个if都能取到
-            if (result[i] ==result[p3]*3 ){
+            if (result[i] == result[p3] * 3) {
                 p3++;
             }
             //保证3个if都能取到
-            if (result[i] ==result[p5]*5 ){
+            if (result[i] == result[p5] * 5) {
                 p5++;
             }
 
-
         }
 
-        return result[index-1];
+        return result[index - 1];
 
     }
 
