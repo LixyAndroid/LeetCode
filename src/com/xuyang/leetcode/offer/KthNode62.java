@@ -1,6 +1,7 @@
 package com.xuyang.leetcode.offer;
 
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 /**
@@ -34,10 +35,29 @@ public class KthNode62 {
                 }
                 cur = cur.right;
             }
-
-
         }
         return null;
 
+    }
+
+    ArrayList<Integer> list = new ArrayList<>();
+
+    //中序有序 二叉搜索树
+    public int kthNode2(TreeNode root, int k) {
+        dfs(root);
+        return list.get(k);
+    }
+
+    private void dfs(TreeNode root) {
+        if (root.left != null) {
+            dfs(root.left);
+        }
+        if (root == null) {
+            return;
+        }
+        list.add(root.val);
+        if (root.right != null) {
+            dfs(root.right);
+        }
     }
 }
