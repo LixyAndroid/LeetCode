@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
  * @date 2020/9/21 17:05
  * 合并K个升序链表
  */
-public class MergeKLists24 {
+public class MergeKLists0023 {
     //我们可以想到一种最朴素的方法：用一个变量 ans 来维护以及合并的链表，第 i 次循环把第 i 个链表和 ans 合并，答案保存到 ans 中。
     public ListNode mergeKLists(ListNode[] lists) {
         ListNode ans = null;
