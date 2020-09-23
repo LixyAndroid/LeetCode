@@ -25,7 +25,6 @@ public class RemoveDuplicates0026 {
             nums[cnt] = temp;
             cnt++;
             i = index + 1;
-
         }
         return cnt;
     }
