@@ -129,11 +129,8 @@ public class LengthOfLongestSubstring0003 {
             }
             ans = Math.max(ans, j - i + 1);
             map.put(s.charAt(j), j + 1);
-
         }
-
         return ans;
-
     }
 
     /*
@@ -150,18 +147,37 @@ public class LengthOfLongestSubstring0003 {
 
     public int lengthOfLongestSubstring4(String s) {
 
-        int n = s.length(),ans=0;
+        int n = s.length(), ans = 0;
         int[] index = new int[128];// current index of character
         // try to extend the range [i, j]
 
-        for (int j=0,i = 0; j < n; j++) {
+        for (int j = 0, i = 0; j < n; j++) {
 
-            i = Math.max(index[s.charAt(j)],i);
+            i = Math.max(index[s.charAt(j)], i);
 
-            ans = Math.max(ans,j-i+1);
-            index[s.charAt(j)] = j+1;
+            ans = Math.max(ans, j - i + 1);
+            index[s.charAt(j)] = j + 1;
         }
 
         return ans;
+    }
+
+    public int lengthOfLongestSubstring5(String s) {
+        Set<Character> set = new HashSet<>();
+        int left = 0;
+        int right = 0;
+        int res = 0;
+        while (right < s.length()) {
+            char c = s.charAt(right++);
+            //存在重复的字符，则移动左指针，直到滑动窗口中不含有该字符
+            while (set.contains(c)) {
+                set.remove(s.charAt(left++));
+            }
+
+            set.add(c);
+            res = Math.max(res, right - left);
+
+        }
+        return res;
     }
 }
