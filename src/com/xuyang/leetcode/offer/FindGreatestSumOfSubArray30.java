@@ -25,21 +25,15 @@ public class FindGreatestSumOfSubArray30 {
     给一个数组，返回它的最大连续子序列的和，你会不会被他忽悠住？(子向量的长度至少是1)
      */
 
-    public static int findGreatestSumOfSubArray(int[] array){
+    public static int findGreatestSumOfSubArray(int[] array) {
 
         int max = array[0];
         for (int i = 1; i < array.length; i++) {
-            array[i]+= Math.max(array[i - 1], 0);
-
-            max = Math.max(max,array[i]);
-
+            array[i] += Math.max(array[i - 1], 0);
+            max = Math.max(max, array[i]);
         }
-
-        return  max;
-
+        return max;
     }
-
-
 
 
     public static int findGreatestSumOfSubArray2(int[] array) {
@@ -47,23 +41,22 @@ public class FindGreatestSumOfSubArray30 {
         int[] dp = new int[len];
         int max = array[0];
         dp[0] = array[0];
-        for(int i=1; i < len; i++){
-            int newMax = dp[i-1] + array[i];
-            if(newMax > array[i])
+        for (int i = 1; i < len; i++) {
+            int newMax = dp[i - 1] + array[i];
+            if (newMax > array[i])
                 dp[i] = newMax;
             else
                 dp[i] = array[i];
-            if(dp[i] > max)
+            if (dp[i] > max)
                 max = dp[i];
         }
         return max;
 
     }
+
     public static void main(String[] args) {
-        int[] array = {6,-3,-2,7,-15,1,2,2};
-
-
-        int[] array2 = {6,-3,-2,7,-8,9,-14,2};
+        int[] array = {6, -3, -2, 7, -15, 1, 2, 2};
+        int[] array2 = {6, -3, -2, 7, -8, 9, -14, 2};
 
         int res = findGreatestSumOfSubArray(array);
         int res2 = findGreatestSumOfSubArray(array2);
